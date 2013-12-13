@@ -27,9 +27,7 @@ Installation
 Customization
 -------------
 
-Strongly recommended and up to you :-)
-
-(More details later, hopefully.)
+Strongly recommended and up to you.
 
 
 Notice
