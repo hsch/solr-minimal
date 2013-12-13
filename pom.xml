@@ -8,15 +8,15 @@
   <properties>
     <solr.port>8983</solr.port>
     <solr.version>4.6.0</solr.version>
-    <jetty.version>7.5.4.v20111024</jetty.version>
+    <jetty.version>9.1.0.v20131115</jetty.version>
     <slf4j.version>1.7.5</slf4j.version>
   </properties>
   <dependencies>
-    <dependency>
-      <artifactId>jetty-runner</artifactId>
-      <groupId>org.mortbay.jetty</groupId>
-      <version>${jetty.version}</version>
-    </dependency>
+  <dependency>
+    <groupId>org.eclipse.jetty</groupId>
+    <artifactId>jetty-runner</artifactId>
+    <version></version>
+  </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-log4j12</artifactId>
@@ -47,7 +47,7 @@
           </execution>
         </executions>
         <configuration>
-          <mainClass>org.mortbay.jetty.runner.Runner</mainClass>
+          <mainClass>org.eclipse.jetty.runner.Runner</mainClass>
           <arguments>
             <argument>--port</argument>
             <argument>${solr.port}</argument>
