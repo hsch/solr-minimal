@@ -7,14 +7,30 @@
   <url/>
   <properties>
     <solr.port>8983</solr.port>
-    <solr.version>3.5.0</solr.version>
+    <solr.version>4.6.0</solr.version>
     <jetty.version>7.5.4.v20111024</jetty.version>
+    <slf4j.version>1.7.5</slf4j.version>
   </properties>
   <dependencies>
     <dependency>
       <artifactId>jetty-runner</artifactId>
       <groupId>org.mortbay.jetty</groupId>
       <version>${jetty.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jcl-over-slf4j</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jul-to-slf4j</artifactId>
+      <version>${slf4j.version}</version>
     </dependency>
   </dependencies>
   <build>
@@ -38,6 +54,10 @@
             <argument>${basedir}/lib/solr/apache-solr-${solr.version}.war</argument>
           </arguments>
           <systemProperties>
+            <systemProperty>
+              <key>log4j.configuration</key>
+              <value>file:${basedir}/minimal/log4j.properties</value>
+            </systemProperty>
             <systemProperty>
               <key>solr.solr.home</key>
               <value>${basedir}/minimal</value>
