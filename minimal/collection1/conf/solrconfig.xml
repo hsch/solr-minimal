@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!--
-Copyright 2011, 2013 Hendrik Schnepel
+Copyright 2011, 2013, 2014 Hendrik Schnepel
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -17,9 +17,7 @@ limitations under the License.
 <config>
   <luceneMatchVersion>LUCENE_36</luceneMatchVersion> 
   <requestHandler name="/select" class="solr.StandardRequestHandler" default="true" />
-  <requestHandler name="/update" class="solr.XmlUpdateRequestHandler" />
-  <requestHandler name="/update/javabin" class="solr.BinaryUpdateRequestHandler" />
-  <requestHandler name="/update/json" class="solr.JsonUpdateRequestHandler" />
+  <requestHandler name="/update" class="solr.UpdateRequestHandler" />
   <requestHandler name="/admin" class="solr.admin.AdminHandlers" />
   <requestHandler name="/admin/ping" class="solr.PingRequestHandler">
     <lst name="invariants">
